@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Oppgave</title>
+    <style>
+        div {
+            color: blue;
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px;
+            border: solid green 2px;
+            width: 20px;
+            height: 20px;
+            float: left;
+            
+        }
+
+        div.firstInLine {
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="r1c1" onclick="clck(this,'r2c1','r1c2','r2c1','r2c1')">7</div>
+    <div id="r1c2" onclick="clck(this,'r1c1','r2c2','r1c3','r1c3')">1</div>
+    <div id="r1c3" onclick="clck(this,'r1c2','r2c3','r2c3','r2c3')">6</div>
+
+    <div id="r2c1" onclick="clck(this,'r2c2','r1c1','r3c1','r2c2')" class="firstInLine">8</div>
+    <div id="r2c2" onclick="clck(this,'r2c1','r2c3','r1c2','r3c2')" ></div>
+    <div id="r2c3" onclick="clck(this,'r1c3','r3c3','r2c2', 'r2c2')">3</div>
+    
+    <div id="r3c1" onclick="clck(this, 'r2c1','r3c2','r2c1','r2c1')" class="firstInLine">4</div>
+    <div id="r3c2" onclick="clck(this, 'r3c1','r3c3','r2c2','r2c2')">2</div>
+    <div id="r3c3" onclick="clck(this, 'r3c2','r2c3','r2c3','r2c3')">5</div>
+
+    <script>
+        function clck(tagElement, alt1, alt2, alt3, alt4) {
+            if(document.getElementById(alt1).innerHTML==''){
+                (document.getElementById(alt1).innerHTML = tagElement.innerHTML);
+            tagElement.innerHTML = '' ;
+            }
+            else if (document.getElementById(alt2).innerHTML==''){
+                (document.getElementById(alt2).innerHTML = tagElement.innerHTML);
+            tagElement.innerHTML = '' ;
+            }
+            else if (document.getElementById(alt3).innerHTML==''){
+                (document.getElementById(alt3).innerHTML = tagElement.innerHTML);
+            tagElement.innerHTML = '' ;
+            }
+            else if (document.getElementById(alt4).innerHTML==''){
+                (document.getElementById(alt4).innerHTML = tagElement.innerHTML);
+            tagElement.innerHTML = '' ;
+            }
+
+            
+        }
+        
+    </script>
+</body>
+</html>
